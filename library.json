@@ -1,0 +1,24 @@
+{
+    "name": "WifiConnection",
+    "keywords": "wifi, connection, executor, runnable",
+    "description": "This is Executor based library for connecting to Wi-Fi network",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/adamszadkowski/WifiConnection.git"
+    },
+    "authors": [
+        {
+            "name": "Adam Szadkowski",
+            "email": "adam@szadkowski.info",
+            "url": "http://www.szdadkowski.info",
+            "maintainer": true
+        }
+    ],
+    "dependencies": {
+        "name": "Executor",
+        "authors": "Adam Szadkowski",
+        "version": "~0.1.1"
+    },
+    "version": "0.1.0",
+    "platforms": "espressif8266"
+}
