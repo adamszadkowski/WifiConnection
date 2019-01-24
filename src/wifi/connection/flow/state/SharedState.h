@@ -11,7 +11,7 @@ namespace state {
 
 class SharedState {
  public:
-  SharedState(Executor &executor, Config &config, Runnable &successTask, Runnable &failTask)
+  SharedState(Executor &executor, Config &config, Command successTask, Command failTask)
       : executor(executor), config(config), successTask(successTask), failTask(failTask) {
     clear();
   }
@@ -28,11 +28,11 @@ class SharedState {
     return config;
   }
 
-  Runnable &getSuccessTask() {
+  Command getSuccessTask() {
     return successTask;
   }
 
-  Runnable &getFailTask() {
+  Command getFailTask() {
     return failTask;
   }
 
@@ -46,8 +46,8 @@ class SharedState {
  private:
   Executor &executor;
   Config &config;
-  Runnable &successTask;
-  Runnable &failTask;
+  Command successTask;
+  Command failTask;
 
   uint8_t retryCount;
 };

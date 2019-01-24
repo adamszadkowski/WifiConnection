@@ -19,7 +19,7 @@ void Connector::executeStep() {
     executor.execute(sharedState->getSuccessTask());
   } else if (sharedState->getRetryCount() < config.getMaxRetryCount()) {
     WiFi.begin(config.getSsid().c_str(), config.getPassword().c_str());
-    executor.execute(*new DelayedTask(executor, taskFactory->createConnectToWifiTask(), config.getDelay(), config.getDelayTimeUnit()));
+    executor.executeWithDelay(taskFactory->createConnectToWifiTask(), config.getDelay(), config.getDelayTimeUnit());
   } else {
     executor.execute(sharedState->getFailTask());
   }

@@ -1,7 +1,7 @@
 #pragma once
 
+#include <Command.h>
 #include <Executor.h>
-#include <Runnable.h>
 #include "wifi/connection/Config.h"
 
 namespace wifi {
@@ -13,15 +13,15 @@ class ConnectorBuilder {
 
   ConnectorBuilder& withExecutor(Executor& executor);
   ConnectorBuilder& withConfig(Config& config);
-  ConnectorBuilder& withSuccessTask(Runnable& successTask);
-  ConnectorBuilder& withFailTask(Runnable& failTask);
+  ConnectorBuilder& withSuccessTask(Command successTask);
+  ConnectorBuilder& withFailTask(Command failTask);
   Runnable* build();
 
  private:
   Executor* executor;
   Config* config;
-  Runnable* successTask;
-  Runnable* failTask;
+  Command successTask;
+  Command failTask;
 };
 
 }  // namespace connection
