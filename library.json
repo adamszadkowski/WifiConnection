@@ -17,8 +17,8 @@
     "dependencies": {
         "name": "Executor",
         "authors": "Adam Szadkowski",
-        "version": "~0.2.0"
+        "version": "~0.2.1"
     },
-    "version": "0.2.0",
+    "version": "0.2.1",
     "platforms": "espressif8266"
 }
